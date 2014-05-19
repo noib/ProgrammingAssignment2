@@ -1,13 +1,13 @@
-## The two functions return the inverse of an input matrix using a cache in order to perform the computation only once
+## The two functions return the inverse of an input matrix using cache storage in order to perform the computation only once
 
 ## This function takes a matrix as input
-## and returns a list of methods allowing the caching & retrieval of a matrix and its inverse within its environment
+## and returns a list of methods allowing the caching & retrieval of the matrix and its inverse within its environment
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
   # This 1st method returns the input matrix itself
   get <- function() x
   # This 2nd method caches a matrix (the inverse of the input matrix) in the variable "inv".
-  # Note the assignment operator "<<-" which is used to look for "inv" in the parent environment.
+  # Note the use of assignment operator "<<-" which looks for "inv" in the parent environment.
   setinv <- function(inverse) inv <<- inverse
   # This 3rd method returns the matrix stored in "inv"
   getinv <- function() inv
